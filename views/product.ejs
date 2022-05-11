@@ -39,11 +39,16 @@
   </div>
   <script>
     paypal.Buttons({
+      style: {
+        color: 'blue',
+        shape: 'pill',
+        label: 'pay'
+      },
       createOrder: (data, actions) => {
         return actions.order.create({
           purchase_units: [{
             amount: {
-              value: '<%= product.price %>' // Can also reference a variable or function
+              value: '1' // Can also reference a variable or function
             }
           }]
         });
